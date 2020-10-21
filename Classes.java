@@ -1,63 +1,60 @@
+package classone;
+
+public class Classes {
+	String grade;//Äê¼¶
+	String major;//×¨Òµ
+	String id;//°à¼¶ĞòºÅ
+	String manager;//°à¼¶¸ºÔğÈË
+	
+	public Classes(String grade,String major,String id){ //¶¨ÒåÓĞ²ÎµÄ¹¹Ôì·½·¨1
+		this.grade = grade;//Ã÷È··ÃÎÊ³ÉÔ±±äÁ¿grade 
+		this.major = major;//Ã÷È··ÃÎÊ³ÉÔ±±äÁ¿major
+		this.id = id;//Ã÷È··ÃÎÊ³ÉÔ±±äÁ¿id
+	}
+	
+	public  Classes(String grade,String major,String id,String manager){ //¶¨ÒåÓĞ²ÎµÄ¹¹Ôì·½·¨2
+		this.grade = grade;//Ã÷È··ÃÎÊ³ÉÔ±±äÁ¿grade
+		this.major = major;//Ã÷È··ÃÎÊ³ÉÔ±±äÁ¿major
+		this.id = id;//Ã÷È··ÃÎÊ³ÉÔ±±äÁ¿id
+		this.manager = manager;	//Ã÷È··ÃÎÊ³ÉÔ±±äÁ¿manager
+	}
+	
+	public void setGrade(String grade){
+		this.grade = grade;//ÉèÖÃgradeµÄÖµ
+	}
+	
 	public void setMajor(String major){
-		this.major = major;//è®¾ç½®majorçš„å€¼
+		this.major = major;//ÉèÖÃmajorµÄÖµ
 	}
 	
 	public void setid(String id){
-		this.id = id ;//è®¾ç½®idçš„å€¼
+		this.id = id ;//ÉèÖÃidµÄÖµ
 	}
 	
-	public void method1() {    // æ–¹æ³•1
-		System.out.println("è¾“å‡ºç­çº§æ‰€æœ‰ä¿¡æ¯");
-		if (manager!= null) {    //ç”¨ifè¯­å¥åˆ¤æ–­æ˜¯å¦æœ‰ç­çº§è´Ÿè´£äºº
-			System.out.println("å¹´çº§ï¼š" + grade + "\n" + "ä¸“ä¸š:" + major+ "\n" + "ç­çº§åºå·:" + id + "\n" + "ç­çº§è´Ÿè´£äºº:" + manager);
+	public void method1() { // ·½·¨1
+		System.out.println("Êä³ö°à¼¶ËùÓĞĞÅÏ¢");
+		if (manager!= null) {
+			System.out.println("Äê¼¶£º" + grade + "\n" + "×¨Òµ:" + major+ "\n" + "°à¼¶ĞòºÅ:" + id + "\n" + "°à¼¶¸ºÔğÈË:" + manager);
 		} else {
-			System.out.println("å¹´çº§ï¼š" + grade + "\n" + "ä¸“ä¸š:" + major+ "\n" + "ç­çº§åºå·:" + id);
+			System.out.println("Äê¼¶£º" + grade + "\n" + "×¨Òµ:" + major+ "\n" + "°à¼¶ĞòºÅ:" + id);
 				}
 	}
 	 
-	public void getmanager(){   //æ–¹æ³•2
+	public void getmanager(){ //·½·¨2
 		
 	}
 	
-	public void method3(String manager){   //æ–¹æ³•3
-		this.manager = manager;//è®¾ç½®ç­çº§è´Ÿè´£äºº
+	public void method3(String manager){ //·½·¨3
+		this.manager = manager;//ÉèÖÃ°à¼¶¸ºÔğÈË
 	}
 	
 	public static void main(String[] args){
-		Classes class_1 = new Classes("1ç­","2020çº§","è½¯ä»¶å·¥ç¨‹","å¼ å¼º");
-		Classes class_2 = new Classes("2ç­","2020çº§","è½¯ä»¶å·¥ç¨‹");
+		Classes class_1 = new Classes("1°à","2020¼¶","Èí¼ş¹¤³Ì","ÕÅÇ¿");
+		Classes class_2 = new Classes("2°à","2020¼¶","Èí¼ş¹¤³Ì");
 		class_1.method1();
 		System.out.println();
 		class_2.method1();
 	}
+	
+}
 
-//(2)é¢˜	
-		Classes[] classesArray = {class_1 , class_2} ;
-		String queryParam_grade = "";  //å¹´çº§
-		String queryParam_major= "";  //ä¸“ä¸š
-		String queryParam_id = "";   //ç­çº§åºå·
-		Classes result = queryBy (classesArray,queryParam_grade,queryParam_major,queryParam_id);{ 
-		//ç”¨ifè¯­å¥åˆ¤æ–­æŸ¥è¯¢ç»“æœæ˜¯å¦å­˜åœ¨
-		if (null != result) {  
-			result.method1();
-		}
-	}
-	//æ²¡æœ‰æ•°æ®åˆ™è¿›è¡Œå‹å¥½æç¤º
-	public static Classes queryBy(Classes[]datas,String grade,String major,String id){
-		if (datas == null || datas.length == 0);{  
-			System.out.println("æ— æ³•æŸ¥è¯¢");
-		}
-	
-	//forå¾ªç¯éå†æ‰€æœ‰æ•°æ®ï¼ŒæŸ¥è¯¢åˆ°ç¬¦åˆæ¡ä»¶çš„æ•°æ®åˆ™è¿”å›å’Œä¸­æ­¢å¾ªç¯
-	for (int i = 0; i < datas.length; i++){ 
-		if(datas[i].grade.equals(grade) || datas[i].major.equals(major) || datas[i].id.equals(id)){
-			return datas[i];
-		}
-	}
-	//éå†å®Œæ‰€æœ‰æ•°æ®æ²¡æœ‰ç¬¦åˆæ¡ä»¶çš„æ•°æ®åˆ™å‹å¥½æç¤º
-	System.out.println("æœªæŸ¥è¯¢åˆ°æ•°æ®");
-		
-	}	
-}	
-	
-		
