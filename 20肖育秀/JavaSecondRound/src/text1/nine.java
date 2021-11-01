@@ -2,11 +2,11 @@ package text1;
 
 public class nine {
 
-	public static void main(String[] args) { //³ÌĞòÆô¶¯Æôµã
-		int n ; //³ËÊı
-		int m ; //±»³ËÊı
+	public static void main(String[] args) { //ç¨‹åºå¯åŠ¨å¯ç‚¹
+		int n ; //ä¹˜æ•°
+		int m ; //è¢«ä¹˜æ•°
 		
-		//forÑ­»·Ç¶Ì×
+		//forå¾ªç¯åµŒå¥—
 		for (n = 1; n < 10 ; n++) { 
 			for(m = n ; m < 10 ; m++) {
 				System.out.print( n + "*" + m + "=" + ( n*m ) + "\t" );
@@ -15,6 +15,5 @@ public class nine {
 		}
 	}
 }
-
-		 
+System.out.println();
 	
